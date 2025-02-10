@@ -81,7 +81,7 @@ const PubList = () => {
                       <strong>Address:</strong> {pub.address}
                     </p>
                     <p className="text-gray-800 text-md">
-                      <strong>Area:</strong> {pub.area}
+                      <strong>Area:</strong> {pub.location}
                     </p>
                   </div>
                 )}
