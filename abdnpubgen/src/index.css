@@ -5,9 +5,9 @@
 
 @font-face {
   font-family: 'fd-souvenir';
-  src: url('./fonts/itc_souvenir_light-webfont.woff') format('woff');
-  src: url('./fonts/itc_souvenir_light-webfont.woff2') format('woff2');
-  src: url('./fonts/ITC-Souvenir-Light-1.ttf') format('truetype');
+  src: url('/fonts/itc_souvenir_light-webfont.woff') format('woff');
+  src: url('/fonts/itc_souvenir_light-webfont.woff2') format('woff2');
+  src: url('/fonts/ITC-Souvenir-Light-1.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
