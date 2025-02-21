@@ -99,17 +99,17 @@ const Wheel = ({ setSelectedPub }) => {
           <img
             src={pintGlass}
             alt="illustration of a pint glass"
-            className="absolute w-30 h-30 md:w-50 md:h-50 right-[65%] md:right-[70%] lg:right-[65%] xl:right-[60%] top-[5%] pre-spin-icon"
+            className="absolute w-30 h-30 md:w-50 md:h-50 right-[65%] md:right-[70%] lg:right-[65%] xl:right-[60%] 2xl:right-[55%] top-[5%] pre-spin-icon"
           />
           <img
             src={stars}
             alt="illustration of a stars"
-            className="absolute w-30 h-30 md:w-50 md:h-50 right-[5%] lg:right-[18%] xl:right-[25%] top-[10%] pre-spin-icon"
+            className="absolute w-30 h-30 md:w-50 md:h-50 right-[5%] lg:right-[18%] xl:right-[25%] 2xl:right-[35%] top-[10%] pre-spin-icon"
           />
           <img
             src={purpleMartini}
             alt="illustration of a purple Martini"
-            className="absolute w-30 h-30 md:w-40 md:h-40 right-[10%] md:right-[5%] lg:right-[20%] xl:right-[25%] top-[60%] pre-spin-icon"
+            className="absolute w-30 h-30 md:w-40 md:h-40 right-[10%] md:right-[5%] lg:right-[20%] xl:right-[25%] 2xl:right-[35%] top-[60%] pre-spin-icon"
           />
         </div>
 
