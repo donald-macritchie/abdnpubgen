@@ -13,7 +13,6 @@ const Banner = () => {
         <img src={topBanner} alt="" />
       </div>
       <div>
-        <p className="karla font-bold text-xl md:text-2xl lg:text-3xl text-center mt-6 p-6"></p>
         <p className="karla font-bold text-xl md:text-2xl lg:text-3xl text-center mt-6 p-6">
           Where are we going tonight, Aberdeen?
         </p>
