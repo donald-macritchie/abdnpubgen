@@ -29,7 +29,7 @@ const PubList = () => {
           Can’t see your local?
         </h1>
         <p className="mt-2 text-lg md:text-xl karla">
-          At ABDN Pub Decider, no pub is left behind.
+          At Pub Spinner, no pub is left behind.
         </p>
         <p className="mt-2 text-lg md:text-xl karla">
           If your favourite place is missing, just get in touch!
