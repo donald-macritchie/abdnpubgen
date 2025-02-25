@@ -13,10 +13,13 @@ const Banner = () => {
         <img src={topBanner} alt="" />
       </div>
       <div>
-        <p className="karla font-bold text-2xl md:text-3xl lg:text-4xl text-center mt-6 p-6">
+        <p className="karla font-bold text-xl md:text-2xl lg:text-3xl text-center mt-6 p-6">
           Aberdeen Pub Decider
         </p>
-        <p className="souvenir font-bold text-4xl md:text-5xl lg:text-6xl text-center p-8 md:p-12 lg:p-20">
+        <p className="souvenir font-bold text-3xl md:text-4xl lg:text-5xl text-center mt-6 p-6">
+          Where are you going tonight?
+        </p>
+        <p className="souvenir font-bold text-3xl md:text-4xl lg:text-6xl text-center p-8 md:p-12 lg:p-20">
           Let&apos;s Spin the Wheel!
         </p>
       </div>

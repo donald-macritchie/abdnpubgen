@@ -14,12 +14,12 @@ const GeneralInfo = () => {
           <img
             src={heartPintFlower}
             alt="Collection illustration of a blue heart, a pint Glass and a purple flower"
-            className="w-40 md:w-50"
+            className="w-40 md:w-50 pb-10"
           />
         </div>
 
         <div className="w-full md:w-1/2 mt-6 md:mt-0">
-          <h3 className="text-3xl md:text-5xl font-bold souvenir">
+          <h3 className="text-3xl/10 md:text-5xl/18 font-bold souvenir">
             Embrace the Unexpected
           </h3>
           {/* Justify textr to the left */}
@@ -33,7 +33,7 @@ const GeneralInfo = () => {
       </div>
 
       {/* Middle Section: Always Centered */}
-      <div className="text-center p-10 md:text-xl">
+      <div className="text-left p-10 md:text-xl">
         <p className="karla">
           Aberdeen has lots to offer. So explore the hidden gems, the cozy
           corners, and the vibrant places where stories are waiting to be made.

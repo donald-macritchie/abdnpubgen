@@ -60,7 +60,7 @@ const LastSpins = ({ selectedPub }) => {
               localStorage.removeItem("lastSpins");
               setLastSpins([]);
             }}
-            className="mt-4 w-full px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+            className="mt-4 w-full souvenir px-4 py-2 rounded-lg border-2 border-black hover:bg-[#f4da42] transition"
           >
             Clear History
           </button>

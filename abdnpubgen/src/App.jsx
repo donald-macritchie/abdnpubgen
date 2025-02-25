@@ -12,7 +12,7 @@ function App() {
   const [selectedPub, setSelectedPub] = useState(null);
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#FFFCC5] to-[#FFFFF3] z-0"></div>
 
       {/* Content wrapper */}

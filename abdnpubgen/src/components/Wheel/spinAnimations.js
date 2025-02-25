@@ -108,7 +108,7 @@ export function animateFloatingIcons(isResetting) {
         { opacity: 0, scale: 0.2, xPercent: -50, yPercent: -50, x: 0, y: 0 },
         {
           opacity: 1,
-          scale: 4,
+          scale: 3.5,
           y: 100,
           duration: 2,
           ease: "power3.out",
@@ -212,7 +212,7 @@ export function animateFloatingIcons(isResetting) {
         { opacity: 0, scale: 0.2, xPercent: -50, yPercent: -50, x: 0, y: 0 },
         {
           opacity: 1,
-          scale: 5,
+          scale: 4.5,
           y: 80,
           duration: 1.8,
           ease: "power3.out",
@@ -316,7 +316,7 @@ export function animateFloatingIcons(isResetting) {
         { opacity: 0, scale: 0.2, xPercent: -50, yPercent: -50, x: 0, y: 0 },
         {
           opacity: 1,
-          scale: 8, // Increased final scale
+          scale: 7.5, // Increased final scale
           y: 100,
           duration: 2,
           ease: "power3.out",

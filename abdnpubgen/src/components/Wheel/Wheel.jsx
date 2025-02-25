@@ -17,7 +17,7 @@ import pubs from "/src/data/pubs.js"; // Import pubs
 const Wheel = ({ setSelectedPub }) => {
   const wheelRef = useRef(null); // Reference to the wheel image
   const [spinning, setSpinning] = useState(false); // State to track spinning status
-  const [resetting, setResetting] = useState(false); // State to track if the wheel needs to reset
+  const [finished, setFinished] = useState(false); // State to track if spin has completed
   const [iconsVisible, setIconsVisible] = useState(true); // State to control the visibility of pre-spin icons
 
   // Scroll function to smoothly scroll to the results container
@@ -33,7 +33,7 @@ const Wheel = ({ setSelectedPub }) => {
 
   // Function to handle the spin action
   const handleSpin = () => {
-    if (spinning || resetting) return; // Prevent spinning if it's already spinning or resetting
+    if (spinning) return; // Prevent spinning if it's already spinning
 
     setSpinning(true); // Set spinning to true when spin starts
     setIconsVisible(false); // Hide the icons when spin starts
@@ -43,9 +43,8 @@ const Wheel = ({ setSelectedPub }) => {
 
     // Call the spinWheelAnimation function and pass the wheelRef and a callback
     spinWheelAnimation(wheelRef, () => {
-      // Once the spin is completed, enable the reset button
       setSpinning(false); // Set spinning to false when the spin finishes
-      setResetting(true); // Enable the resetting state
+      setFinished(true); // Set finished state to show the reset button
 
       const pubKeys = Object.keys(pubs);
       const randomPub =
@@ -61,11 +60,10 @@ const Wheel = ({ setSelectedPub }) => {
 
   // Function to handle the reset action
   const handleReset = () => {
-    // setResetting(false); // Disable resetting state
-    // setIconsVisible(true); // Show the icons when reset is clicked
-    // resetWheel(wheelRef); // Reset the wheel's rotation position
-    // setSpinning(false); // Ensure the spin button can be used again
-    location.reload();
+    setFinished(false); // Hide reset button and show spin button again
+    setIconsVisible(true); // Show pre-spin icons again
+    setSelectedPub(null); // Clear the selected pub
+    resetWheel(wheelRef); // Reset the wheel's rotation
   };
 
   return (
@@ -79,20 +77,29 @@ const Wheel = ({ setSelectedPub }) => {
           ref={wheelRef} // Reference to the wheel element
         />
 
-        {/* Spin Button */}
-        <button
-          id="spin-button"
-          onClick={handleSpin} // Trigger the spin action
-          disabled={spinning || resetting} // Disable the button during spinning or resetting
-          className={`souvenir transition-all absolute w-20 h-20 md:w-34 md:h-34 lg:w-40 lg:h-40 md:text-4xl top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 m-0 p-2 ${
-            spinning || resetting
-              ? "bg-[#f4da42] cursor-not-allowed"
-              : "bg-fd-light cursor-pointer"
-          } text-black text-xl border-2 border-fd-dark rounded-full`}
-        >
-          {/* No text on spin or reset */}
-          {!spinning && !resetting && "Spin"}
-        </button>
+        {/* Spin or Reset Button */}
+        {finished ? (
+          <button
+            id="reset-button"
+            onClick={handleReset} // Reset the wheel when clicked
+            className="souvenir transition-all absolute w-20 h-20 md:w-34 md:h-34 lg:w-40 lg:h-40 md:text-4xl top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 m-0 p-2 bg-fd-light text-black text-xl border-2 border-fd-dark rounded-full cursor-pointer z-30"
+          >
+            Reset
+          </button>
+        ) : (
+          <button
+            id="spin-button"
+            onClick={handleSpin} // Trigger the spin action
+            disabled={spinning} // Disable the button during spinning
+            className={`souvenir transition-all absolute w-20 h-20 md:w-34 md:h-34 lg:w-40 lg:h-40 md:text-4xl top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 m-0 p-2 z-30 ${
+              spinning
+                ? "bg-[#f4da42] cursor-not-allowed"
+                : "bg-fd-light cursor-pointer"
+            } text-black text-xl border-2 border-fd-dark rounded-full`}
+          >
+            {!spinning && "Spin"}
+          </button>
+        )}
 
         {/* Pre-spin images */}
         <div className={`pre-spin-icons ${iconsVisible ? "" : "hidden"}`}>
@@ -152,19 +159,6 @@ const Wheel = ({ setSelectedPub }) => {
             Enjoy your night!
           </p>
         </div>
-      </div>
-      <div>
-        {/* Reset Button (Located Under the Wheel) */}
-        {resetting && (
-          <button
-            id="reset-button"
-            onClick={handleReset} // Reset the wheel when clicked
-            className={`flex flex-col justify-center items-center mt-4 mx-auto w-40 h-12 bg-fd-light text-black text-xl border-2 border-fd-dark rounded-full cursor-pointer 
-            ${!resetting ? "visibility-hidden" : "visibility-visible"}`}
-          >
-            Reset
-          </button>
-        )}
       </div>
     </>
   );
