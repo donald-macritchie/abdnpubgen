@@ -29,15 +29,17 @@ const GeneralInfo = () => {
             before. It’s about stepping out of the routine and embracing the
             unexpected.
           </p>
+          <p className="mt-4 karla md:text-xl">
+            Aberdeen has lots to offer. So explore the hidden gems, the cozy
+            corners, and the vibrant places where stories are waiting to be
+            made.
+          </p>
         </div>
       </div>
 
       {/* Middle Section: Always Centered */}
       <div className="text-left p-10 md:text-xl">
-        <p className="karla">
-          Aberdeen has lots to offer. So explore the hidden gems, the cozy
-          corners, and the vibrant places where stories are waiting to be made.
-        </p>
+        <p className="karla"></p>
       </div>
 
       {/* Bottom Section: Text Left, Image Right (or centered on small screens) */}
