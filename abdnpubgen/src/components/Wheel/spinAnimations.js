@@ -316,8 +316,8 @@ export function animateFloatingIcons(isResetting) {
         { opacity: 0, scale: 0.2, xPercent: -50, yPercent: -50, x: 0, y: 0 },
         {
           opacity: 1,
-          scale: 7.5, // Increased final scale
-          y: 100,
+          scale: 7.5,
+          y: 200,
           duration: 2,
           ease: "power3.out",
         },

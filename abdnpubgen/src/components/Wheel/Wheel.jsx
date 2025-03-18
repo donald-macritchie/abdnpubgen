@@ -6,6 +6,12 @@ import stars from "/images/big-star-small-star.svg";
 import pinkMartini from "/images/pink-martini.svg";
 import purpleMartini from "/images/purple-martini.svg";
 
+import whereWeGoing from "/images/whereWeGoing.svg";
+import enjoyYourNight from "/images/enjoyYourNight.svg";
+import letsGoOut from "/images/letsGoOut.svg";
+import minesAPint from "/images/minesAPint.svg";
+import getARoundIn from "/images/getARoundIn.svg";
+
 // Import the spinWheelAnimation and resetWheel functions from spinWheel.js
 import { spinWheelAnimation, resetWheel } from "./spinWheel.js";
 
@@ -19,6 +25,20 @@ const Wheel = ({ setSelectedPub }) => {
   const [spinning, setSpinning] = useState(false); // State to track spinning status
   const [finished, setFinished] = useState(false); // State to track if spin has completed
   const [iconsVisible, setIconsVisible] = useState(true); // State to control the visibility of pre-spin icons
+  const [randomMessageImage, setRandomMessageImage] = useState(minesAPint);
+
+  const messageImages = [
+    whereWeGoing,
+    enjoyYourNight,
+    letsGoOut,
+    minesAPint,
+    getARoundIn,
+  ];
+
+  const getRandomMessageImage = () => {
+    const randomIndex = Math.floor(Math.random() * messageImages.length);
+    return messageImages[randomIndex];
+  };
 
   // Scroll function to smoothly scroll to the results container
   function scrollToResultsWithGSAP() {
@@ -45,6 +65,8 @@ const Wheel = ({ setSelectedPub }) => {
     spinWheelAnimation(wheelRef, () => {
       setSpinning(false); // Set spinning to false when the spin finishes
       setFinished(true); // Set finished state to show the reset button
+
+      setRandomMessageImage(getRandomMessageImage());
 
       const pubKeys = Object.keys(pubs);
       const randomPub =
@@ -152,12 +174,12 @@ const Wheel = ({ setSelectedPub }) => {
             className="absolute w-20 h-20 opacity-0 floating-icon"
             id="purple-martini"
           />
-          <p
-            className="absolute text-sm souvenir opacity-0 floating-icon"
+          <img
+            src={randomMessageImage}
+            alt="Random message"
+            className="absolute w-10 h-10 opacity-0 floating-icon"
             id="good-luck"
-          >
-            Enjoy your night!
-          </p>
+          />
         </div>
       </div>
     </>
